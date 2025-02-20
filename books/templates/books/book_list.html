@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/book_list.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>Book Management</h1>
+    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'book_add' %}" class="add-book">Add New Book</a>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <!-- 表头，添加排序链接 -->
+                    <th>
+                        <a href="?sort=title&order={% if current_sort == 'title' and current_order == 'asc' %}desc{% else %}asc{% endif %}">
+                            Title {% if current_sort == 'title' %}{% if current_order == 'asc' %}▲{% else %}▼{% endif %}{% endif %}
+                        </a>
+                    </th>
+                    <th>
+                        <a href="?sort=issn&order={% if current_sort == 'issn' and current_order == 'asc' %}desc{% else %}asc{% endif %}">
+                            ISSN {% if current_sort == 'issn' %}{% if current_order == 'asc' %}▲{% else %}▼{% endif %}{% endif %}
+                        </a>
+                    </th>
+                    <th>
+                        <a href="?sort=publish_date&order={% if current_sort == 'publish_date' and current_order == 'asc' %}desc{% else %}asc{% endif %}">
+                            Publish Date {% if current_sort == 'publish_date' %}{% if current_order == 'asc' %}▲{% else %}▼{% endif %}{% endif %}
+                        </a>
+                    </th>
+                    <th>
+                        <a href="?sort=stock&order={% if current_sort == 'stock' and current_order == 'asc' %}desc{% else %}asc{% endif %}">
+                            Stock {% if current_sort == 'stock' %}{% if current_order == 'asc' %}▲{% else %}▼{% endif %}{% endif %}
+                        </a>
+                    </th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.issn }}</td>
+                    <td>{{ book.publish_date }}</td>
+                    <td>{{ book.stock }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>
+                        <a href="{% url 'book_edit' book.id %}">Edit</a>
+                        <a href="{% url 'book_delete' book.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

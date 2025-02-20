@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书管理系统</title>
+
+    <!-- 加载静态文件 -->
+    {% load static %}
+
+    <!-- 引入 CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
+</head>
+<body>
+
+    <div id="time"></div>
+
+    <h1>📚 图书管理系统</h1>
+
+    {% if user.is_authenticated %}
+        <p style="color: white; font-size: 20px;">欢迎, {{ user.username }}!</p>
+        <a href="{% url 'book_list' %}" class="btn">📖 查看书籍列表</a>
+        <a href="{% url 'logout' %}" class="btn">🚪 退出</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn">🔑 登录</a>
+        <a href="{% url 'register' %}" class="btn">📝 注册</a>
+    {% endif %}
+
+    <!-- 书籍名人名言容器 -->
+    <div class="quote-container" id="quote-container">
+        <p class="quote-text" id="quote-text">“《红楼梦》是中国文学的瑰宝。”</p>
+    </div>
+
+    <!-- 引入 JS -->
+    <script src="{% static '/js/home.js' %}"></script>
+
+</body>
+</html>

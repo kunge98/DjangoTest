@@ -1,0 +1,50 @@
+/* 页面背景样式 */
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 50px;
+}
+
+/* 表单容器 */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题 */
+h1 {
+    font-size: 32px;
+    text-align: center;
+    color: #3a8dff;
+}
+
+/* 输入框 */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 按钮 */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3a8dff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #1d6fb7;
+}

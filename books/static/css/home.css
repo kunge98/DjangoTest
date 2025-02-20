@@ -1,0 +1,115 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    transition: background 2s ease-in-out;
+}
+
+/* 动态背景颜色 */
+@keyframes bgAnimation {
+    0% { background: linear-gradient(120deg, #84fab0, #8fd3f4); }
+    50% { background: linear-gradient(120deg, #ff9a9e, #fad0c4); }
+    100% { background: linear-gradient(120deg, #84fab0, #8fd3f4); }
+}
+
+body {
+    animation: bgAnimation 20s infinite alternate; /* 设置为20秒来减缓背景切换速度 */
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s forwards;
+}
+
+/* 时间显示 */
+#time {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.2s forwards;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s forwards;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transform: scale(1.1);
+}
+
+/* 渐入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 书籍名人名言样式 */
+.quote-container {
+    position: fixed;
+    bottom: 20px;  /* 20px距离底部 */
+    right: 20px;   /* 20px距离右边 */
+    padding: 10px 20px;
+    background-color: transparent;  /* 背景透明 */
+    color: #333;
+    font-size: 16px;  /* 字体大小不需要太大 */
+    font-style: italic;
+    text-align: right;
+    border-radius: 8px;
+    z-index: 9999;  /* 确保名言在页面上层 */
+    opacity: 1;  /* 初始时显示 */
+    transition: opacity 1s ease-in-out; /* 添加淡入淡出动画 */
+}
+
+/* 名言文本样式 */
+.quote-text {
+    color: #000000;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* 淡入效果 */
+.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+/* 淡出效果 */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}

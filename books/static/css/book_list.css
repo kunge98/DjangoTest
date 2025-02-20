@@ -1,0 +1,70 @@
+/* 页面背景样式 */
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 30px;
+}
+
+/* 容器样式 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 排序按钮样式 */
+th a {
+    color: #3a8dff;
+    text-decoration: none;
+}
+
+th a:hover {
+    text-decoration: underline;
+}
+
+/* 表格行悬停效果 */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 按钮样式 */
+a.add-book {
+    display: inline-block;
+    margin: 10px 0;
+    background-color: #3a8dff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a.add-book:hover {
+    background-color: #1d6fb7;
+}
+
+/* 退出按钮样式 */
+a {
+    color: #3a8dff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #1d6fb7;
+}
